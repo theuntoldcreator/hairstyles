@@ -1,0 +1,31 @@
+{
+    "short_name": "HairSnap",
+    "name": "HairSnap",
+    "description": "Your One Stop HairSnap",
+    "scope": ".",
+   
+    "icons": [{
+            "src": "/public_html/images/smalllogo.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any"
+        },
+        {
+            "src": "/public_html/images/smalllogo512x512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any"
+        },
+              {
+    "src": "/public_html/images/smalllogo144x144.png",
+    "sizes": "144x144",
+    "type": "image/png",
+    "purpose": "any"
+}
+    ],
+    "start_url": "/index.html",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "theme_color": "#6B4FA1"
+ 
+}
