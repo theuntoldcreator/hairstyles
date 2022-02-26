@@ -1,7 +1,7 @@
 {
-    "short_name": "HairSnap",
-    "name": "HairSnap",
-    "description": "Your One Stop HairSnap",
+    "short_name": "Hairstyles",
+    "name": "Hairstyles",
+    "description": "Your One Stop Hairstyles",
     "scope": ".",
    
     "icons": [{

@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^hairsnap.pages.dev$
-RewriteRule (.*) https://www.hairsnap.pages.dev/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^hairstyles.pages.dev$
+RewriteRule (.*) https://www.hairstyles.pages.dev/$1 [R=301,L]
 ErrorDocument 404 /404.html
 </IfModule>
