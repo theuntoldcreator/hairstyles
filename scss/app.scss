@@ -16,6 +16,10 @@
                 $dot-color: #6a4fa19d; // Dimensions
                 $dot-size: 1.5px;
                 $dot-space: 24px;
+                html{
+    width: 100%;
+block-size: fit-content;
+}
                 body {
                     background-color: $header-color;
                     font-family: 'Readex Pro', sans-serif;
@@ -722,3 +726,202 @@
  .none{
      display: none;
  }
+ #error{
+    display: table;
+    width: 100%;
+    height: 50vh;
+    text-align: center;
+}
+
+.fof{
+	  display: table-cell;
+	  vertical-align: middle;
+}
+
+.fof h1{
+	  font-size: 50px;
+	  display: inline-block;
+	  padding-right: 12px;
+	  animation: type .5s alternate infinite;
+}
+
+@keyframes type{
+	  from{box-shadow: inset -3px 0px 0px #888;}
+	  to{box-shadow: inset -3px 0px 0px transparent;}
+}
+
+
+#overlayer{
+    width:100%;
+    height:100%;
+    position:absolute;
+    z-index:1;
+    background:#ffffff00
+}
+.main-item{
+    padding-top:10px;
+    padding:10px;
+    background-color:#fff;
+    width:100%;
+    z-index:3
+}
+.background-masker{
+    background-color:#fff;
+    position:absolute
+}
+.cards{
+    border:0;
+    border-radius:25px
+}
+.btn-divide-left{
+    top:0;
+    left:15%;
+    height:100%;
+    width:30%
+}
+@keyframes placeHolderShimmer{
+    0%{
+        background-position:-800px 0
+    }
+    100%{
+        background-position:800px 0
+    }
+}
+.animated-background{
+    animation-duration:.5s;
+    animation-fill-mode:forwards;
+    animation-iteration-count:infinite;
+    animation-name:placeHolderShimmer;
+    animation-timing-function:linear;
+    background-color:#f6f7f8;
+    background:linear-gradient(to right,#eee 8%,#6a4fa175 28%,#eee 33%);
+    background-size:800px 104px;
+    height:70px;
+    position:relative
+}
+h6{
+    visibility:hidden;
+}
+.n{
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
+.btns{
+    border:0;
+    border-radius:2rem;
+    padding:1rem;
+    height:1rem;
+    margin:.5rem;
+}
+.txt{
+    font-size:large;
+    text-align: justify;
+}
+.txt-bold{
+    font-weight:600;
+    color:#6b4fa1;
+}
+
+.f-gender-male{
+    width:80px;
+    height:80px;
+    position:relative;
+    left:1rem;
+    border-radius:400px;
+    border:2px solid #6b4fa1;
+    background-position:-10px -3.5px;
+    background-size:0;
+    z-index:1;
+    transform:scale(1.1);
+    transition: filter .5s ease-in-out;
+    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(100%); /* FF 35+ */
+    
+}
+.f-gender-female{
+    width:80px;
+    height:80px;
+    position:relative;
+    left:1rem;
+    border-radius:400px;
+    border:2px solid #6b4fa1;
+    background-position:-10px -3.5px;
+    background-size:0;
+    z-index:0;
+    transform:scale(1.1);
+    transition: filter .5s ease-in-out;
+    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(100%); /* FF 35+ */
+}
+.f-gender-female:hover{
+    transform:scale(1.2);
+    z-index:2;
+    -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(0%); /* FF 35+ */
+}
+.f-gender-male:hover{
+    transform:scale(1.2);
+    z-index:2;
+    -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(0%); /* FF 35+ */
+}
+
+.gender{
+    display:flex;
+    justify-content: center;
+    margin-right: 2rem;
+}
+.welcomebox{
+    align-items:center;
+    width:0;
+    height:max-content;
+    float:left;
+}
+.sidebox{
+    height:20rem;
+    width:40rem;
+    position:relative;
+    background-color:#fff;
+}
+.img-logo{
+    pointer-events:none;
+    width:650px;
+    margin:-1rem;
+}
+@media(min-width:200px){
+    .img-logo{
+        pointer-events:none;
+        width:300px;
+    }
+}
+.txt{
+    font-size:large;
+    text-align: justify;
+}
+.txt-bold{
+    font-weight:600;
+    color:#6b4fa1;
+}
+.bg-welcome{
+    background:#fff;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.btn-outline-primary{
+    border:2px #6b4fa1 solid!important;
+    color:#6b4fa1!important;
+}
+.btn-outline-primary:hover{
+    background:#6b4fa1!important;
+    color:#e5e5e5!important;
+}
+.welcomelogo{
+    text-align: center;
+    width:2rem;
+    height:1rem;
+    margin-top:3rem;
+    margin-bottom: 1rem;
+    
+}
