@@ -12272,8 +12272,7 @@ h6, .h6 {
 }
 
 .f-gender-male {
-  width: 80px;
-  height: 80px;
+  background-color: #fff;
   position: relative;
   left: 1rem;
   border-radius: 400px;
@@ -12294,8 +12293,7 @@ h6, .h6 {
 }
 
 .f-gender-female {
-  width: 80px;
-  height: 80px;
+background-color:#fff;
   position: relative;
   left: 1rem;
   border-radius: 400px;

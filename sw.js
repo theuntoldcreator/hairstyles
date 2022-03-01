@@ -31,3 +31,10 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
+ //if browser support service worker
+
+$(window).load(function() {
+$(".main-item").delay(500).fadeOut("fast");
+$("#overlayer").delay(500).fadeOut("slow");
+})

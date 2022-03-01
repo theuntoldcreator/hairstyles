@@ -1,3 +1,6 @@
+body{
+  background-color:#ffffff !important;
+}
 .wrapper {
   max-width: 320px;
   margin: 2em auto;
