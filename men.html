@@ -10,7 +10,7 @@
   <link rel="dns-prefetch" href="https://hairstyles.pages.dev/">
   <meta name="theme-color" content="#6B4FA1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Hair Snap is the ideal place to go. Browse through our blogs & gallery of hundreds of hairstyles, or watch hair tutorials on how to style your looks the latest way.">
+  <meta name="description" content="Browse through our blogs & gallery of hundreds of hairstyles, or watch hair tutorials on how to style your looks the latest way.">
   <meta name="Keywords" content="hairstyles For Men And Women, fashion nova, short hair styles, natural hair styles, hair styles, hairstyles for men, cute hairstyles, braided hairstyles, mens haircuts, Satyapavanvanka">
   <meta name="author" content="contain by Hairstyles team">
   <meta name="copyright" content="Copyright © 2021 HairSnap">
@@ -20,9 +20,9 @@
   <link rel="apple-touch-startup-image" href="./public_html/images/smalllogo.png">
   <link rel="icon" type="image/x-icon" href="./public_html/images/smalllogo.png">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -4720,44 +4720,9 @@
   gtag('config', 'UA-211298669-2');
 </script>
 
-  <script>
- //if browser support service worker
- if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js');
-        };
-        $(window).load(function() {
-        $(".main-item").delay(500).fadeOut("fast");
-      $("#overlayer").delay(500).fadeOut("slow");
-    })
-        $("a[href^='#']").click(function(e) {
-            e.preventDefault();
-
-            var position = $($(this).attr("href")).offset().top - 180;
-
-            $("body, html").animate({
-                scrollTop: position
-            } /* speed */ );
-        });
-  </script>
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyAKrbUtp2ZBKkepK8Nhwm3DhDLzt0ifaug",
-      authDomain: "hairsnap-e5804.firebaseapp.com",
-      projectId: "hairsnap-e5804",
-      storageBucket: "hairsnap-e5804.appspot.com",
-      messagingSenderId: "302934611473",
-      appId: "1:302934611473:web:edd5ef0936cb39534283b0"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-  </script>
-  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f3a4175dc0344feeba110b98309bc564"}'></script><!-- End Cloudflare Web Analytics -->
-</body>
+ <script src="./preload.js">
+  //if browser support service worker
+ 
+   </script> 
+ </body>
 </html>
