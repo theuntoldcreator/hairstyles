@@ -32,6 +32,3 @@ Explore Hairstyle Hub and discover the perfect hairstyle to express your unique 
 
 Feel free to contribute to our collection by adding your favorite hairstyles or suggesting new features. Fork the repository, make your changes, and submit a pull request – let's build the ultimate hairstyle resource together!
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
