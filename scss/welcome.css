@@ -1,96 +1,251 @@
+/* =====================================================
+   Hairstyles – Smooth Realistic Swirling Redesign
+   ===================================================== */
 
-.f-gender-male{
-    width:80px;
-    height:80px;
-    position:relative;
-    left:1rem;
-    border-radius:400px;
-    border:2px solid #6b4fa1;
-    background-position:-10px -3.5px;
-    background-size:0;
-    z-index:1;
-    transform:scale(1.1);
-    transition: filter .5s ease-in-out;
-    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
-    filter: grayscale(100%); /* FF 35+ */
-    
-}
-.f-gender-female{
-    width:80px;
-    height:80px;
-    position:relative;
-    left:1rem;
-    border-radius:400px;
-    border:2px solid #6b4fa1;
-    background-position:-10px -3.5px;
-    background-size:0;
-    z-index:0;
-    transform:scale(1.1);
-    transition: filter .5s ease-in-out;
-    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
-    filter: grayscale(100%); /* FF 35+ */
-}
-.f-gender-female:hover{
-    transform:scale(1.2);
-    z-index:2;
-    -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
-    filter: grayscale(0%); /* FF 35+ */
-}
-.f-gender-male:hover{
-    transform:scale(1.2);
-    z-index:2;
-    -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
-    filter: grayscale(0%); /* FF 35+ */
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple: #6B4FA1;
+  --pink:   #d875af;
+  --glass-bg: rgba(255, 255, 255, 0.13);
+  --glass-border: rgba(255, 255, 255, 0.28);
+  --shadow: rgba(107, 79, 161, 0.30);
 }
 
-.gender{
-    display:flex;
-    justify-content: center;
-    margin-right: 2rem;
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', 'Readex Pro', sans-serif;
+  overflow: hidden;
+  background: #1a0d2e;
 }
-.welcomebox{
-    align-items:center;
-    width:0;
-    height:max-content;
-    float:left;
+
+/* --- Canvas Background --- */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
-.sidebox{
-    height:20rem;
-    width:40rem;
-    position:relative;
-    background-color:#fff;
+
+/* --- Page wrapper --- */
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem 1rem 6rem;
 }
-.img-logo{
-    pointer-events:none;
-    width:650px;
-    margin:-1rem;
+
+/* --- Glass Card --- */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid var(--glass-border);
+  border-radius: 2.5rem;
+  box-shadow: 0 12px 60px var(--shadow), inset 0 1px 0 rgba(255,255,255,0.2);
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+  max-width: 480px;
+  width: 100%;
 }
-@media(min-width:200px){
-    .img-logo{
-        pointer-events:none;
-        width:300px;
-    }
+
+/* --- Logo --- */
+.img-logo {
+  pointer-events: none;
+  width: 280px;
+  filter: drop-shadow(0 4px 24px rgba(107,79,161,0.5));
+  animation: slideUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-.txt{
-    font-size:large;
-    text-align: justify;
+
+@media (min-width: 480px) {
+  .img-logo { width: 320px; }
 }
-.txt-bold{
-    font-weight:600;
-    color:#6b4fa1;
+
+/* --- Gradient Title --- */
+.gradient-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #c9a7f8, #f0a0d8, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  animation: fadeIn 1s 0.3s ease both;
 }
-.bg-welcome{
-    background:#fff;
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
+
+/* --- "Are You?" label --- */
+.are-you-label {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 1.5rem 0 1rem;
+  animation: fadeIn 1s 0.5s ease both;
 }
-.btn-outline-primary{
-    border:2px #6b4fa1 solid!important;
-    color:#6b4fa1!important;
+
+/* --- Gender Selector --- */
+.gender {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  animation: fadeIn 1s 0.65s ease both;
 }
-.btn-outline-primary:hover{
-    background:#6b4fa1!important;
-    color:#e5e5e5!important;
+
+.gender-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gender-circle {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s ease,
+              border-color 0.4s ease;
+  box-shadow: 0 4px 20px rgba(107,79,161,0.2);
+}
+
+.gender-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(80%) brightness(0.9);
+  transition: filter 0.5s ease, transform 0.4s ease;
+}
+
+.gender-label {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.4s ease;
+}
+
+/* Male hover */
+.gender-btn--male:hover .gender-circle {
+  transform: scale(1.12) translateY(-4px);
+  border-color: rgba(107,79,161,0.9);
+  box-shadow: 0 8px 40px rgba(107,79,161,0.55), 0 0 0 3px rgba(107,79,161,0.25);
+}
+.gender-btn--male:hover .gender-circle img {
+  filter: grayscale(0%) brightness(1.05);
+  transform: scale(1.08);
+}
+.gender-btn--male:hover .gender-label { color: #c9a7f8; }
+
+/* Female hover */
+.gender-btn--female:hover .gender-circle {
+  transform: scale(1.12) translateY(-4px);
+  border-color: rgba(216,117,175,0.9);
+  box-shadow: 0 8px 40px rgba(216,117,175,0.55), 0 0 0 3px rgba(216,117,175,0.25);
+}
+.gender-btn--female:hover .gender-circle img {
+  filter: grayscale(0%) brightness(1.05);
+  transform: scale(1.08);
+}
+.gender-btn--female:hover .gender-label { color: #f0a0d8; }
+
+/* --- Bottom Nav --- */
+.nav--icons {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  animation: slideUpNav 0.8s 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.nav--icons ul {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+  background: rgba(20, 10, 40, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.nav--icons ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 100px;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.nav--icons ul li a svg {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav--icons ul li a:hover {
+  color: #c9a7f8;
+  background: rgba(107,79,161,0.2);
+}
+
+.nav--icons ul li a:hover svg {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 6px rgba(107,79,161,0.8));
+}
+
+/* --- Animations --- */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(32px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUpNav {
+  from { opacity: 0; transform: translateX(-50%) translateY(24px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* --- Preloader --- */
+#overlayer {
+  position: fixed;
+  inset: 0;
+  background: #1a0d2e;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#overlayer.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
